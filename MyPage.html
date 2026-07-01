@@ -1,0 +1,903 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Manager - Data Engineering and Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background: linear-gradient(135deg, #0d0521, #1a0a2e, #2d1b4e, #1a0a2e);
+  color: #f0eaf5;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(13,5,33,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200,80,122,0.2);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  color: #c8507a;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #f0eaf5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e891b0;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background: #f0eaf5;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 30px 60px;
+}
+
+.hero-content {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-left {
+  text-align: center;
+}
+
+.profile-ring {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #c8507a, #f0c040, #8bc34a);
+  box-shadow: 0 0 25px rgba(200,80,122,0.4);
+}
+
+.profile-ring .inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #1a0a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: #e891b0;
+  overflow: hidden;
+}
+
+.profile-ring .inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hero-right h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.hero-right h1 span {
+  color: #e891b0;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: #e891b0;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.summary {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  max-width: 600px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.badges span {
+  background: rgba(200,80,122,0.15);
+  border: 1px solid rgba(200,80,122,0.3);
+  color: #e891b0;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.section-title .line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #c8507a, #f0c040);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* EDUCATION CARDS */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.edu-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,80,122,0.25);
+  border-radius: 16px;
+  padding: 25px;
+  border-left: 4px solid #c8507a;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(200,80,122,0.15);
+}
+
+.edu-card .year-badge {
+  display: inline-block;
+  background: rgba(200,80,122,0.2);
+  color: #e891b0;
+  padding: 3px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.edu-card .emoji {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.edu-card h3 {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.edu-card p {
+  color: #f0eaf5;
+  opacity: 0.65;
+  font-size: 0.85rem;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,80,122,0.25);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(200,80,122,0.15);
+  border-color: #c8507a;
+}
+
+.skill-icon-box {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #c8507a, #9b3a5e);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.skill-card h3 {
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.skill-card p {
+  font-size: 0.83rem;
+  color: #f0eaf5;
+  opacity: 0.65;
+  line-height: 1.6;
+}
+
+/* TIMELINE */
+.decade-badge {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.decade-badge span {
+  display: inline-block;
+  background: linear-gradient(90deg, #8bc34a, #6da832);
+  color: #1a0a2e;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  box-shadow: 0 5px 20px rgba(139,195,74,0.3);
+}
+
+.timeline {
+  position: relative;
+  padding: 30px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #c8507a, #8bc34a);
+  border-radius: 2px;
+}
+
+.tl-item {
+  display: flex;
+  width: 50%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.tl-item.left {
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+.tl-item.right {
+  justify-content: flex-start;
+  margin-left: 50%;
+  padding-left: 50px;
+}
+
+.tl-item::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: #c8507a;
+  border: 3px solid #1a0a2e;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 12px rgba(200,80,122,0.5);
+}
+
+.tl-item.left::after {
+  right: -8px;
+}
+
+.tl-item.right::after {
+  left: -8px;
+}
+
+.tl-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,80,122,0.25);
+  border-radius: 16px;
+  padding: 22px;
+  max-width: 380px;
+  width: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tl-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(200,80,122,0.15);
+  border-color: #c8507a;
+}
+
+.tl-card .role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #e891b0;
+  margin-bottom: 4px;
+}
+
+.tl-card .company {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.tl-card .duration {
+  font-size: 0.8rem;
+  color: #f0c040;
+  font-weight: 600;
+}
+
+/* PERSONAL */
+.personal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.personal-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,80,122,0.25);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.personal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(200,80,122,0.12);
+}
+
+.personal-card h3 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.hobbies-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 15px;
+  background: rgba(200,80,122,0.1);
+  border-radius: 12px;
+  min-width: 100px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hobby:hover {
+  background: rgba(200,80,122,0.2);
+  transform: scale(1.05);
+}
+
+.hobby .h-icon {
+  font-size: 2rem;
+}
+
+.hobby span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.family-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.family-big-icon {
+  font-size: 4rem;
+}
+
+.family-content p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.7;
+  max-width: 350px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 30px;
+  border-top: 1px solid rgba(200,80,122,0.15);
+  margin-top: 30px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  color: #f0eaf5;
+  opacity: 0.5;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #c8507a;
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+footer p {
+  color: #f0eaf5;
+  opacity: 0.4;
+  font-size: 0.85rem;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(13,5,33,0.98);
+    flex-direction: column;
+    padding: 20px 30px;
+    gap: 15px;
+    border-bottom: 1px solid rgba(200,80,122,0.2);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .summary {
+    margin: 0 auto;
+  }
+
+  .badges {
+    justify-content: center;
+  }
+
+  .hero-right h1 {
+    font-size: 1.7rem;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .tl-item.left,
+  .tl-item.right {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 55px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+
+  .tl-item.left::after,
+  .tl-item.right::after {
+    left: 12px;
+    right: auto;
+  }
+
+  .personal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#personal">Personal</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="profile-ring">
+        <div class="inner">
+          <!-- Replace the icon below with your photo:
+               <img src="your-photo.jpg" alt="Profile Photo"> -->
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <h1>Product Manager for <span>Data Engineering &amp; Analytics</span></h1>
+      <p class="tagline">"Optimistic by nature, Curious by design, Focused on outcome"</p>
+      <p class="summary">A seasoned Product &amp; Project Management professional with <strong>1.7+ decades</strong> of experience spanning services, sales, supply chain, and data analytics. Passionate about strategic product vision, agile leadership, and driving business outcomes through data-driven decision making.</p>
+      <div class="badges">
+        <span>PMP Certified</span>
+        <span>Agile Coach</span>
+        <span>CSM / CSPO / SAFe</span>
+        <span>Data Science</span>
+        <span>Product Strategy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <div class="section-title fade-in">
+    <h2>Education, Learnings &amp; Certifications</h2>
+    <div class="line"></div>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card fade-in">
+      <div class="emoji">&#127891;</div>
+      <span class="year-badge">2005</span>
+      <h3>B.E. in Computer Science</h3>
+      <p>Bachelors in Engineering</p>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="emoji">&#128218;</div>
+      <span class="year-badge">2008</span>
+      <h3>MBA in Information Technology</h3>
+      <p>Masters in Business Administration</p>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="emoji">&#128203;</div>
+      <span class="year-badge">2016</span>
+      <h3>Project Management Professional (PMP)</h3>
+      <p>Globally recognized PM certification</p>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="emoji">&#128260;</div>
+      <span class="year-badge">Agile</span>
+      <h3>Agile Certified - CSM, CSPO, SAFe</h3>
+      <p>Certified ScrumMaster, Product Owner, SAFe Practitioner</p>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="emoji">&#128161;</div>
+      <span class="year-badge">2019</span>
+      <h3>Product Manager by Dell</h3>
+      <p>Internal product management certification</p>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="emoji">&#128105;&#8205;&#128188;</div>
+      <span class="year-badge">Leadership</span>
+      <h3>Women Mentorship &amp; Development - Iron Lady</h3>
+      <p>Mentorship program for women leaders</p>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="emoji">&#128202;</div>
+      <span class="year-badge">2022</span>
+      <h3>Decision Making Using Data Science</h3>
+      <p>Advanced data-driven decision-making program</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="section-title fade-in">
+    <h2>Skills &amp; Strengths</h2>
+    <div class="line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card fade-in">
+      <div class="skill-icon-box"><i class="fas fa-boxes-stacked"></i></div>
+      <h3>Product &amp; Project Management</h3>
+      <p>End-to-end management across services, sales, and supply chain domains.</p>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon-box"><i class="fas fa-shield-halved"></i></div>
+      <h3>Operations Risk Management</h3>
+      <p>Identifying, assessing, and mitigating operational risks for business continuity.</p>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon-box"><i class="fas fa-globe"></i></div>
+      <h3>Global Team Management</h3>
+      <p>Leading cross-functional, multicultural teams across geographies.</p>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon-box"><i class="fas fa-bullseye"></i></div>
+      <h3>Strategic Product Vision &amp; Roadmap</h3>
+      <p>Crafting product visions and actionable roadmaps aligned with business goals.</p>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon-box"><i class="fas fa-people-arrows"></i></div>
+      <h3>Agile Coach</h3>
+      <p>Coaching teams in Agile methodologies - Scrum, SAFe, and Kanban.</p>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon-box"><i class="fas fa-chart-line"></i></div>
+      <h3>Data Management &amp; Analytics</h3>
+      <p>Turning complex data into meaningful insights through visualization and analytics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL JOURNEY -->
+<section class="section" id="journey">
+  <div class="section-title fade-in">
+    <h2>My Professional Journey</h2>
+    <div class="line"></div>
+  </div>
+  <div class="decade-badge fade-in">
+    <span>&#128200; 1.7+ Decades of Experience</span>
+  </div>
+  <div class="timeline">
+    <div class="tl-item left fade-in">
+      <div class="tl-card">
+        <div class="role">Software Engineer</div>
+        <div class="company"><i class="fas fa-building"></i> Impetus</div>
+        <div class="duration">2005 - 2006</div>
+      </div>
+    </div>
+    <div class="tl-item right fade-in">
+      <div class="tl-card">
+        <div class="role">Product Engineer</div>
+        <div class="company"><i class="fas fa-building"></i> Symphony</div>
+        <div class="duration">2009 - 2011</div>
+      </div>
+    </div>
+    <div class="tl-item left fade-in">
+      <div class="tl-card">
+        <div class="role">Project Manager</div>
+        <div class="company"><i class="fas fa-building"></i> IBM</div>
+        <div class="duration">2011 - 2016</div>
+      </div>
+    </div>
+    <div class="tl-item right fade-in">
+      <div class="tl-card">
+        <div class="role">Project Manager / Advisor</div>
+        <div class="company"><i class="fas fa-building"></i> Dell - EBI Services</div>
+        <div class="duration">2016 - 2019</div>
+      </div>
+    </div>
+    <div class="tl-item left fade-in">
+      <div class="tl-card">
+        <div class="role">Product Manager / Sr. Advisor</div>
+        <div class="company"><i class="fas fa-building"></i> Dell - EBI Supply Chain</div>
+        <div class="duration">2019 - 2022</div>
+      </div>
+    </div>
+    <div class="tl-item right fade-in">
+      <div class="tl-card">
+        <div class="role">Product / Project Manager, Sr. Advisor</div>
+        <div class="company"><i class="fas fa-building"></i> Dell - SEPI</div>
+        <div class="duration">2022 - Present</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL -->
+<section class="section" id="personal">
+  <div class="section-title fade-in">
+    <h2>Beyond Work</h2>
+    <div class="line"></div>
+  </div>
+  <div class="personal-grid">
+    <div class="personal-card fade-in">
+      <h3><i class="fas fa-heart" style="color:#c8507a"></i> Hobbies</h3>
+      <div class="hobbies-flex">
+        <div class="hobby">
+          <span class="h-icon">&#9992;&#65039;</span>
+          <span>Travelling</span>
+        </div>
+        <div class="hobby">
+          <span class="h-icon">&#129406;</span>
+          <span>Trekking</span>
+        </div>
+        <div class="hobby">
+          <span class="h-icon">&#127793;</span>
+          <span>Gardening</span>
+        </div>
+        <div class="hobby">
+          <span class="h-icon">&#128131;</span>
+          <span>Dancing</span>
+        </div>
+      </div>
+    </div>
+    <div class="personal-card fade-in">
+      <h3><i class="fas fa-home" style="color:#f0c040"></i> Family</h3>
+      <div class="family-content">
+        <div class="family-big-icon">&#128104;&#8205;&#128105;&#8205;&#128103;&#8205;&#128102;</div>
+        <p>Family is at the core of everything. Drawing strength, inspiration, and balance from loved ones to bring the best version to both personal and professional life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="social-links">
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+  </div>
+  <p>2025 | Product Manager - Data Engineering and Analytics</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// Mobile nav toggle
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+// Close mobile nav on link click
+var links = document.querySelectorAll('.nav-links a');
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('active');
+  });
+}
+
+// Scroll fade-in animation
+var fadeEls = document.querySelectorAll('.fade-in');
+
+var observer = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) {
+    if (entries[i].isIntersecting) {
+      entries[i].target.classList.add('visible');
+      observer.unobserve(entries[i].target);
+    }
+  }
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+for (var i = 0; i < fadeEls.length; i++) {
+  observer.observe(fadeEls[i]);
+}
+</script>
+
+</body>
+</html>
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
